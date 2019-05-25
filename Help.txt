@@ -1,1 +1,89 @@
 Hello this is the help file !
+
+- Help :
+
+		git help config
+		git help push
+		git help pull
+		git help branch
+
+- Configuration :
+
+Identity Name	git config --global user.name "Moonyll"
+Identity Email	git config --global user.email "s.pouwels@laposte.net"
+Editor Tool	git config --global core.editor subl
+Diff Tool		git config --global merge.tool filemerge
+
+Liste des globals	git config --list
+Status des fichiers	git status
+
+- Lister les branchs	git branch -a (*sur la branche courante).
+
+- Créer une branch
+
+1. Deux lignes: créer et basculer sur la nouvelle branch
+
+		git branch nom_de_ma_branch_nouvelle
+		git checkout nom_de_ma_branch_nouvelle
+
+2. Une seule ligne: créer et basculer
+
+		git checkout -b nom_de_ma_branch_nouvelle
+
+- Supprimer une branch
+
+1. Si la branch est local et n'est pas créée sur le repo distant
+
+		git branch -d nom_de_ma_branch_local
+
+2. Si la branch est présente sur le repo distant
+
+		git push origin --delete nom_de_ma_branch_distante
+
+- Changer de branch
+
+		git checkout nom_de_ma_branch
+
+- Premier commit
+
+		git add .
+		git commit -m "initial commit"
+
+- Commit suivant
+
+		git add chemin_vers_mon_fichier
+		git commit -m "message du commit"
+
+- Annuler le dernier commit et modifs
+
+		git reset --hard md5_commit
+		git push --force
+
+- Antidater un commit.
+
+		git add .
+		GIT_AUTHOR_DATE="2015-12-12 08:32 +100" git commit -m "Commit antidaté"
+
+- Mettre à jour le dépôt local
+
+		git pull
+
+- Mettre à jour le dépôt local d'une branch spécifique
+
+		git pull origin MA_BRANCH
+
+- Envoyer ses commits vers le dépôt distant
+
+		git push
+
+- Envoyer ses commits vers le dépôt distant sur une branch spécifique
+
+		git push origin MA_BRANCH
+
+- Supprimer un fichier du répertoire de travail et de l'index
+
+		git rm nom_du_fichier
+
+- Supprimer un fichier de l'index
+
+		git rmg --cached nom_du_fichier
